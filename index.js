@@ -4,6 +4,7 @@
  */
 function getLength(numbers) {
   // TODO
+  return numbers.length;
 }
 
 /**
@@ -12,6 +13,11 @@ function getLength(numbers) {
  */
 function getSum(numbers) {
   // TODO
+  let sum = 0;
+  for(let count = 0; count < numbers.length; count++){
+    sum = sum + numbers[count];
+  }
+  return sum;
 }
 
 /**
@@ -20,6 +26,11 @@ function getSum(numbers) {
  */
 function getMean(numbers) {
   // TODO
+  let sum = 0;
+  for(let count = 0; count < numbers.length; count++){
+    sum = sum + numbers[count];
+  }
+  return sum/numbers.length;
 }
 
 /**
@@ -28,6 +39,13 @@ function getMean(numbers) {
  */
 function getMin(numbers) {
   // TODO
+  let smallestIndex = 0;
+  for(let count = 0; count < numbers.length; count++){
+    if(numbers[count] < numbers[smallestIndex]){
+      smallestIndex = count;
+    }
+  }
+  return numbers[smallestIndex];
 }
 
 /**
@@ -36,6 +54,13 @@ function getMin(numbers) {
  */
 function getMax(numbers) {
   // TODO
+  let largestIndex = 0;
+  for(let count = 0; count < numbers.length; count++){
+    if(numbers[count] > numbers[largestIndex]){
+      largestestIndex = count;
+    }
+  }
+  return numbers[largestIndex];
 }
 
 /**
@@ -44,6 +69,19 @@ function getMax(numbers) {
  */
 function getRange(numbers) {
   // TODO
+  let smallestIndex = 0;
+  for(let count = 0; count < numbers.length; count++){
+    if(numbers[count] < numbers[smallestIndex]){
+      smallestIndex = count;
+    }
+  }
+  let largestIndex = 0;
+  for(let count = 0; count < numbers.length; count++){
+    if(numbers[count] > numbers[largestIndex]){
+      largestestIndex = count;
+    }
+  }
+  return (numbers[largestIndex] - numbers[smallestIndex]);
 }
 
 /**
@@ -52,6 +90,13 @@ function getRange(numbers) {
  */
 function getEvens(numbers) {
   // TODO
+  const evenArray = [];
+  for(let count = 0; count < numbers.length; count++){
+    if(numbers[count]%2 === 0){
+      evenArray.push(numbers[count]);
+    }
+  }
+  return evenArray;
 }
 
 /**
@@ -60,6 +105,13 @@ function getEvens(numbers) {
  */
 function getOdds(numbers) {
   // TODO
+  const oddArray = [];
+  for(let count = 0; count < numbers.length; count++){
+    if(numbers[count]%2 !== 0){
+      oddArray.push(numbers[count]);
+    }
+  }
+  return oddArray;
 }
 
 // === READ BUT DO NOT EDIT THE CODE BELOW ===
@@ -101,5 +153,5 @@ const userInputString = prompt(
   "Please enter some integers separated by commas.",
   "28,-15,30,975,400"
 );
-const numbers = convertStringToNumbers(userInputString);
-describeNumbers(numbers);
+const number = convertStringToNumbers(userInputString);
+describeNumbers(number);
